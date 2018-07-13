@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Projeto Com Javascript</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="author" content="Gabriel Gasparino Rubia">
+	<link rel="stylesheet" type="text/css" href="css/projeto.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
+</head>
+<body>
+	<header>
+		<!--area de apresentação-->
+		<div class="apresentation"></div>
+		<!--menu de navegação: sobre conhecimento e contato-->
+		<nav class="nav"></nav>
+		<!--area onde se encontra os icones de rede social-->
+		<div class="redes-sociais"></div>
+	</header>
+
+	<!--area sobre mim, dizer quem sou, minha idade...-->
+	<section class="quemSou" id="sobre">
+		
+	</section>
+
+	<!--minha área de conhecimento e mais...-->
+	<section class="conhecimento" id="conhecimento">
+		
+	</section>
+
+	<!--como me contatar, email fazer uma caixa de email para enviar-->
+	<section class="contato" id="contato">
+		
+	</section>
+	
+	<!--fazer uma botçao para voltar para cima-->
+	<footer>
+	</footer>
+	<script src="js/app/view/View.js"></script>
+	<script src="js/app/controller/ProjetoController.js"></script>
+	<script src="js/app/models/Mensagem.js"></script>
+	<script src="js/app/view/ApresentacaoView.js"></script>
+	<script src="js/app/view/NavView.js"></script>
+	<script src="js/app/view/RedesSociaisView.js"></script>
+	<script src="js/app/view/QuemSouView.js"></script>
+	<script src="js/app/view/ConhecimentoView.js"></script>
+	<script src="js/app/view/ContatoView.js"></script>
+
+	<script type="text/javascript">
+		let projetoController = new ProjetoController();
+	</script>
+</body>
+</html>

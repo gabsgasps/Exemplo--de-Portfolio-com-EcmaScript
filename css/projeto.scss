@@ -1,0 +1,264 @@
+@import 'reset.css';
+
+//variáveis criadas para reutilizaçaõ no código
+$tamanho-da-fonte: 16px;
+$fonte-padrão: sans-serif;
+$cor-padrão: #25262a;
+$cor-second: #f0e9b7;
+$cor-texto: #eee; 
+
+@mixin displayFlex{
+	display: flex;
+}
+%alturaAuto{
+	height: auto;
+}
+/*Geral*/
+body{
+	font-size: $tamanho-da-fonte;
+	font-family: $fonte-padrão;
+}
+
+//Cabeçalho
+header{
+	width: 100%;
+	height: 450px;
+	padding: 1.5em 2em .8em 70px;
+	background-color: #25262a;
+	@include displayFlex;
+	align-items: baseline;
+	justify-content: space-between;
+
+	//caixa de apresentação
+	.apresentation{
+
+		width: 30%;
+		@extend %alturaAuto;
+		border-left: 5px solid #fff;
+		padding-left: 10px;
+		@include displayFlex;
+		align-self:center;
+		h1{
+			color: $cor-texto;
+			display: block;
+			font-size: 3.4em;
+			text-transform: uppercase;
+			font-weight: 100;
+		}
+	}
+	//menu de navegação
+	nav{
+		width: 400px;
+		@extend %alturaAuto;
+		/*Lista do menu*/
+		ul{	
+			width: 100%;
+			@include displayFlex;
+			justify-content: space-evenly;
+			align-items: center;
+
+			li a{
+				font-size: 16px;
+				text-transform: uppercase;
+				color: black;
+				transition: linear .3s;
+				color: #fff;
+			}:hover{
+				border-top:2px solid #fff;
+				border-bottom: 2px solid #fff;
+			}
+		}
+		
+	}
+}
+//Lista de Redes Sociais
+.redes-sociais{
+	width: 200px;
+}
+.redes-sociais ul{	
+	width: 100%;
+	@include displayFlex;
+	justify-content: space-around;
+	align-items: center;
+
+	li a i{
+		@include displayFlex;
+		align-self: center;
+		color: $cor-padrão;
+		font-size: 26px;
+		padding: 5px;
+		background-color: #fff;
+		border: none;
+		border-radius: 15px;
+		font-weight: bolder;
+		&:hover{
+			font-weight: lighter;
+		}
+	}
+}
+
+.quemSou{
+	width: 100%;
+	height: 500px;
+	@extend %alturaAuto;
+	background-color: $cor-second;
+	padding: 4rem;
+
+	h2{
+		text-align: left;
+		text-transform: uppercase;
+		font-size: 30px;
+		font-weight: 700;
+		color: $cor-padrão;
+		margin-bottom: 20px;
+		color: $cor-padrão;
+	}
+	div{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		p{
+			width: 50%;
+			text-align: justify;
+		}
+	}
+
+	.caixa-imagem{
+    	width: 290px;
+    	height: 290px;
+    	margin-left: 30px;
+
+    	img{
+			border-radius: 50%;
+			width: 100%;
+    		transition:ease .3s;
+			&:hover{
+				cursor: pointer;
+				width: 310px;
+				
+			}
+
+    	}
+	}
+}
+
+.conhecimento{
+	width: 100%;
+	@extend %alturaAuto;
+	overflow: hidden;
+	padding-top: 50px;
+
+	h2{
+		font-size: 2em;
+		text-transform: uppercase;
+		margin-bottom: 40px;
+	}
+	.secao-conhecimento{
+		width: 100%;
+		padding: 80px 40px;
+		margin-bottom: 20px;
+		background-color: $cor-padrão;
+
+		h3{
+			font-size: 24px;
+			font-weight: 100;
+			color: $cor-texto;
+			margin-bottom: 30px;
+		}
+		p{
+			color: $cor-texto;
+			font-weight: 400;
+
+		}
+	}
+	.secao-conhecimento:last-child{
+		margin-bottom: 0px;
+	}
+}
+
+.contato{
+	
+	width: 100%;
+	@extend %alturaAuto;
+	overflow: hidden;
+
+	.chamada-contato{
+
+		width: 100%;
+		height: 150px;
+		background-color: $cor-texto;
+		@include displayFlex;
+		flex-flow: column wrap;
+		align-items:center;
+		justify-content: center;
+
+		h2{
+			font-size: 2em;
+			margin-bottom: .3em	;
+			text-transform: uppercase;
+		}
+	}
+}
+
+
+.form{
+	width: 100%;
+	@extend %alturaAuto;
+	padding: 5em 70px;
+	@include displayFlex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+
+	input{
+		margin-bottom: 50px;
+		outline: none;
+		transition: linear .3s;
+		width: 400px;
+		border:none;
+		border-bottom: 2px solid $cor-padrão;
+
+		&:focus{
+			padding: .9em .3em;
+			color: $cor-padrão;
+		}
+	}
+	input[type=text]::placeholder{
+		font-size: 1.3em;
+	}
+	textarea{
+		width: 400px;
+		height: 100px;
+		outline: none;
+		border: 1px solid $cor-padrão;
+		font-size: 1.3em;		
+		padding: .3em;
+		color: $cor-padrão;
+		margin-bottom: 50px;
+	}
+
+	button{
+		width: 100px;
+		padding:.8em;
+		border: none;
+		border-radius: 30px;
+		cursor: pointer;
+			font-weight: lighter;			
+		background-color: $cor-padrão;
+		color: $cor-texto;
+		box-shadow: 3px 5px;
+		transition: ease .2s;
+		&:hover{
+			font-weight: bolder;
+			padding:.9em;
+			background-color: lighten($cor-padrão, 10);
+		}
+	}
+}
+footer{
+	width: 100%;
+	height: 300px;
+	@extend %alturaAuto;
+	background-color: $cor-second;
+	@include displayFlex;
+}
